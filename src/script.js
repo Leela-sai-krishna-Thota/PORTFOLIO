@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollToTop();
   initSkillBars();
+  initResumeDownload();
 });
 
 /* ==========================================================
@@ -268,8 +269,7 @@ function initTypingEffect() {
   const roles = [
     'Full-Stack Developer',
     'Software Engineer',
-    'Data Structures Specialist',
-    'AI & Machine Learning Student'
+    'Data Structures Specialist'
   ];
   let wordIndex = 0;
   let charIndex = 0;
@@ -452,9 +452,58 @@ function initContactForm() {
       return;
     }
 
-    // Interactive developer simulation toast
-    showToast('Success! Thank you for getting in touch. I will contact you shortly.', 'success');
-    form.reset();
+    // Get submit button & display transmitting loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'Transmitting...';
+      submitBtn.style.opacity = '0.7';
+      submitBtn.style.cursor = 'not-allowed';
+    }
+
+    // FormSubmit AJAX submission parameters
+    const submissionData = {
+      "Contact Name": name,
+      "Email": email,
+      "Subject Line": subject,
+      "Inquiry Message": msg,
+      "_subject": `⚡ Portfolio Inquiry: ${subject}`,
+      "_replyto": email,
+      "_captcha": "false"
+    };
+
+    // AJAX POST request to FormSubmit endpoint
+    fetch('https://formsubmit.co/ajax/thotaleelasaikrishna@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(submissionData)
+    })
+    .then(async (response) => {
+      if (response.ok) {
+        showToast('Success! Your message was submitted.', 'success');
+        form.reset();
+      } else {
+        const errDetail = await response.json().catch(() => ({}));
+        const errText = errDetail.message || 'Form transmission failed. Please try again.';
+        showToast(errText, 'error');
+      }
+    })
+    .catch((err) => {
+      console.error('Submission AJAX error:', err);
+      showToast('Network error, please check connection and try again.', 'error');
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+      }
+    });
   });
 
   function showToast(message, type) {
@@ -469,7 +518,7 @@ function initContactForm() {
     // Auto erase toast panels
     setTimeout(() => {
       toast.style.display = 'none';
-    }, 6000);
+    }, 8000);
   }
 
   function isValidEmail(email) {
@@ -498,5 +547,195 @@ function initScrollToTop() {
       top: 0,
       behavior: 'smooth'
     });
+  });
+}
+
+/* ==========================================================
+   12. Professional PDF Resume Download Flow
+   ========================================================== */
+function initResumeDownload() {
+  const downloadBtn = document.getElementById('download-resume-btn');
+  if (!downloadBtn) return;
+
+  downloadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (typeof html2pdf === 'undefined') {
+      alert('PDF download engine is loading, please wait a moment.');
+      return;
+    }
+
+    const originalHTML = downloadBtn.innerHTML;
+    downloadBtn.style.opacity = '0.7';
+    downloadBtn.style.pointerEvents = 'none';
+    downloadBtn.innerHTML = 'Preparing PDF...';
+
+    const element = document.getElementById('resume-pdf-template');
+    if (!element) {
+      alert('Error: Resume template container not found.');
+      downloadBtn.style.opacity = '1';
+      downloadBtn.style.pointerEvents = 'auto';
+      downloadBtn.innerHTML = originalHTML;
+      return;
+    }
+
+    // Inject CSS keyframes programmatically to support rotating SVG spinner
+    if (!document.getElementById('pdf-spin-keyframes')) {
+      const style = document.createElement('style');
+      style.id = 'pdf-spin-keyframes';
+      style.innerHTML = `
+        @keyframes pdf-spin-kf {
+          100% { transform: rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    // Create high-fidelity professional full-screen layout generator loading overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'pdf-loader-overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100vw';
+    overlay.style.height = '100vh';
+    overlay.style.background = 'rgba(10, 11, 15, 0.96)';
+    overlay.style.backdropFilter = 'blur(10px)';
+    overlay.style.webkitBackdropFilter = 'blur(10px)';
+    overlay.style.zIndex = '999999';
+    overlay.style.display = 'flex';
+    overlay.style.flexDirection = 'column';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.color = '#ffffff';
+    overlay.style.fontFamily = "'Inter', Arial, sans-serif";
+    overlay.style.transition = 'opacity 0.3s ease';
+
+    // Create container inner markup
+    const innerContainer = document.createElement('div');
+    innerContainer.style.display = 'flex';
+    innerContainer.style.flexDirection = 'column';
+    innerContainer.style.alignItems = 'center';
+    innerContainer.style.gap = '20px';
+    innerContainer.innerHTML = `
+      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1; animation: pdf-spin-kf 0.8s linear infinite;">
+        <circle cx="12" cy="12" r="10" stroke="#1f2937" stroke-width="2.5"></circle>
+        <path d="M12 2a10 10 0 0 1 10 10" stroke="#6366f1" stroke-width="3"></path>
+      </svg>
+      <div style="font-size: 18px; font-weight: 600; letter-spacing: 0.5px; text-align: center;">Exporting Resilient PDF Resume...</div>
+      <div style="font-size: 12px; color: #a1a1aa; text-align: center; margin-top: -8px;">Applying micrographic margins & vector scales</div>
+    `;
+
+    overlay.appendChild(innerContainer);
+    document.body.appendChild(overlay);
+
+    // Robustly resolve relative standard URL path to ensure GitHub Pages and nested domain integrations
+    const currentPath = window.location.pathname;
+    const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+    const pdfUrl = `${window.location.origin}${basePath}Thota_Leela_Sai_Krishna_Resume.pdf`;
+
+    // Fetch the physical static A4 PDF compiled compiled via pdfkit
+    fetch(pdfUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Static compiled PDF resume not found at: ' + pdfUrl);
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        // Provide user a brief, elegant high-end loader transition window (600ms)
+        setTimeout(() => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'Thota_Leela_Sai_Krishna_Resume.pdf';
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url);
+          document.body.removeChild(a);
+          cleanup();
+        }, 700);
+      })
+      .catch(error => {
+        console.warn('Unable to retrieve pre-compiled static resume, executing dynamic DOM on-the-fly rendering fallback as safeguard:', error);
+        
+        // Fallback Dynamic html2pdf render engine
+        element.style.display = 'block';
+        element.style.position = 'fixed';
+        element.style.top = '0';
+        element.style.left = '0';
+        element.style.width = '794px';
+        element.style.height = 'auto';
+        element.style.opacity = '1';
+        element.style.zIndex = '999998';
+        element.style.pointerEvents = 'none';
+
+        const originalScrollY = window.scrollY;
+        const originalScrollX = window.scrollX;
+        window.scrollTo(0, 0);
+
+        setTimeout(() => {
+          const opt = {
+            margin:       [0.4, 0.4, 0.4, 0.4], 
+            filename:     'Thota_Leela_Sai_Krishna_Resume.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { 
+              scale: 2.2,
+              useCORS: true,
+              letterRendering: true,
+              scrollX: 0,
+              scrollY: 0,
+              windowWidth: 794
+            },
+            jsPDF:        { 
+              unit: 'in', 
+              format: 'letter', 
+              orientation: 'portrait' 
+            }
+          };
+
+          html2pdf()
+            .set(opt)
+            .from(element)
+            .save()
+            .then(() => {
+              window.scrollTo(originalScrollX, originalScrollY);
+              cleanup();
+            })
+            .catch((err) => {
+              console.error('Dynamic PDF Generation Failure:', err);
+              alert('An unexpected error occurred while preparing your download.');
+              window.scrollTo(originalScrollX, originalScrollY);
+              cleanup();
+            });
+        }, 200);
+      });
+
+    // Helper cleanup function to restore document to pristine state
+    function cleanup() {
+      // Re-hide the fallback resume element
+      element.style.display = 'none';
+      element.style.position = '';
+      element.style.top = '';
+      element.style.left = '';
+      element.style.width = '';
+      element.style.height = '';
+      element.style.zIndex = '';
+      element.style.pointerEvents = '';
+
+      // Fade out and remove loading overlay
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      }, 300);
+
+      // Restore download trigger button
+      downloadBtn.style.opacity = '1';
+      downloadBtn.style.pointerEvents = 'auto';
+      downloadBtn.innerHTML = originalHTML;
+    }
   });
 }

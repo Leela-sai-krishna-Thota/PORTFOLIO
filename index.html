@@ -8,6 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     <!-- Master Stylesheet Link -->
     <link rel="stylesheet" href="/src/style.css" />
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   </head>
   <body>
 
@@ -30,7 +32,7 @@
               <polyline points="2 17 12 22 22 17"></polyline>
               <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
-            TLK.DEV
+            Sai Krishna
           </a>
           
           <nav class="nav-links" id="nav-links">
@@ -103,8 +105,8 @@
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
               </a>
-              <!-- Interactive Resume link with client download trigger -->
-              <a href="javascript:void(0)" onclick="alert('Downloading Thota Leela Sai Krishna\'s technical resume...') " class="btn btn-secondary">
+              <!-- Direct Static Resume Download with Gracious fallback -->
+              <a href="Thota_Leela_Sai_Krishna_Resume.pdf" download="Thota_Leela_Sai_Krishna_Resume.pdf" id="download-resume-btn" class="btn btn-secondary">
                 Download Resume
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -115,19 +117,19 @@
             </div>
 
             <div class="hero-socials">
-              <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="social-icon" aria-label="GitHub">
+              <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank" class="social-icon" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
               </a>
-              <a href="https://linkedin.com/in/thotaleelasaikrishna" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292" target="_blank" class="social-icon" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="https://leetcode.com" target="_blank" class="social-icon" aria-label="LeetCode">
+              <a href="https://leetcode.com/u/Leela_338/" target="_blank" class="social-icon" aria-label="LeetCode">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="16 18 22 12 16 6"></polyline>
                   <polyline points="8 6 2 12 8 18"></polyline>
@@ -211,7 +213,7 @@
                   </svg>
                 </div>
                 <h3>Education</h3>
-                <p>Pursuing B.Tech in CSE with a CGPA of 9.03/10 at Vishnu Institute of Technology, specializing in core algorithms and system architectures.</p>
+                <p>Pursuing B.Tech in CSE with a CGPA of 8.89/10 at Vishnu Institute of Technology, specializing in core algorithms and system architectures.</p>
               </div>
 
               <!-- Bento Card 2 -->
@@ -254,15 +256,15 @@
               <!-- Counter stats cards -->
               <div class="stats-grid">
                 <div class="stat-item">
-                  <span class="stat-num" data-value="15" data-suffix="+">0+</span>
+                  <span class="stat-num" data-value="5" data-suffix="+">0+</span>
                   <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-num" data-value="450" data-suffix="+">0+</span>
+                  <span class="stat-num" data-value="100" data-suffix="+">0+</span>
                   <span class="stat-label">LeetCode</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-num" data-value="9" data-suffix=".03">0</span>
+                  <span class="stat-num" data-value="8" data-suffix=".89">0</span>
                   <span class="stat-label">B.Tech CGPA</span>
                 </div>
               </div>
@@ -540,96 +542,86 @@
                   <span class="tech-pill">JWT</span>
                 </div>
                 <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching Live Sports Scheduler... Experience real-time field booking, calendar grids, and role-based login simulations.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
+                  <a href="https://sports-oe7v.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Live Demo</a>
+                  <a href="https://github.com/Leela-sai-krishna-Thota/Sports" target="_blank" class="btn btn-primary">
                     GitHub Code
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 2: NANOHEAL – AI Medical Assistant (SIH 2025) -->
+            <!-- Project 2: AI Code & Smart Contract Auditor -->
             <div class="project-card reveal delay-100">
               <div class="project-display">
-                <span class="project-tag">AI Medical Assistant</span>
+                <span class="project-tag">AI & Security</span>
                 <!-- Project Vector Representation -->
                 <svg class="project-vector" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="400" height="240" fill="#080e1a"/>
-                  <circle cx="200" cy="120" r="85" fill="#a855f7" fill-opacity="0.04" />
-                  <!-- Heartbeat pulse wave -->
-                  <path d="M60,120 L130,120 L145,90 L160,150 L175,100 L190,130 L205,120 L270,120 L285,70 L300,170 L315,110 L330,120 L350,120" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <!-- Glowing chat bubble & Neural nodes -->
-                  <rect x="140" y="45" width="120" height="40" rx="10" fill="#111827" stroke="#a855f7" stroke-width="1.5" />
-                  <circle cx="160" cy="65" r="4" fill="#a855f7" />
-                  <circle cx="172" cy="65" r="4" fill="#a855f7" />
-                  <circle cx="184" cy="65" r="4" fill="#a855f7" />
-                  <path d="M250,85 L250,95 L240,85 Z" fill="#111827" stroke="#a855f7" stroke-width="1.5" />
-                  <text x="200" y="69" fill="#10b981" font-family="monospace" font-size="10" font-weight="bold">AI: ACTIVE</text>
-                  <!-- Floating cross symbol -->
-                  <path d="M315,45 L325,45 M320,40 L320,50" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round" />
+                  <circle cx="200" cy="120" r="85" fill="#10b981" fill-opacity="0.04" />
+                  <!-- Security Shield & Binary Code Lines -->
+                  <path d="M200,60 L270,85 L270,135 C270,175 240,195 200,205 C160,195 130,175 130,135 L130,85 Z" stroke="#10b981" stroke-width="2.5" fill="#111827" fill-opacity="0.6" stroke-linejoin="round" />
+                  <path d="M170,125 L190,145 L230,105" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                  <!-- Floating terminal / checkmarks -->
+                  <rect x="70" y="70" width="45" height="25" rx="4" fill="#1f2937" stroke="#10b981" stroke-width="1" />
+                  <text x="76" y="86" fill="#10b981" font-family="monospace" font-size="9">PASS</text>
+                  <rect x="285" y="140" width="45" height="25" rx="4" fill="#1f2937" stroke="#ef4444" stroke-width="1" />
+                  <text x="291" y="156" fill="#ef4444" font-family="monospace" font-size="9">WARN</text>
                 </svg>
               </div>
               <div class="project-content">
-                <h3 class="project-title">NANOHEAL AI Medical Companion</h3>
-                <p class="project-desc font-sans">Ranked Top 50 in the SIH 2025 screening out of 230 teams. Harnesses deep integration with Gemini API inside Node environment to serve real-time diagnostic guidance, prioritize health privacy, and ensure client health accessibility.</p>
+                <h3 class="project-title">AI Code & Smart Contract Auditor</h3>
+                <p class="project-desc font-sans">An automated analysis system leveraging Gemini API to scan codebases and smart contracts. Identifies security vulnerabilities, logical flaws, and compilation bottlenecks with zero local file footprint, returning instant linting matrices and detailed fix instructions.</p>
                 <div class="project-tech">
-                  <span class="tech-pill">Gemini API</span>
-                  <span class="tech-pill">MERN Stack</span>
-                  <span class="tech-pill">AI Prompting</span>
-                  <span class="tech-pill">Privacy Protocols</span>
+                  <span class="tech-pill">Gemini-Pro</span>
+                  <span class="tech-pill">NodeJS / Express</span>
+                  <span class="tech-pill">ReactJS</span>
+                  <span class="tech-pill">Smart Audit API</span>
+                  <span class="tech-pill">TailwindCSS</span>
                 </div>
                 <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching NANOHEAL Hospital/Patient Interface... Ask symptom cases, view secure privacy-first triage recommendations.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
+                  <a href="https://spendwise-urqo.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Live Demo</a>
+                  <a href="https://github.com/Leela-sai-krishna-Thota/SpendWise" target="_blank" class="btn btn-primary">
                     GitHub Code
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 3: Feedback Collection System -->
+
+            <!-- Project 3: AI Resume Analyzer & ATS Optimizer -->
             <div class="project-card reveal">
               <div class="project-display">
-                <span class="project-tag">Enterprise System</span>
+                <span class="project-tag">SaaS / ATS Optimization</span>
                 <!-- Project Vector Representation -->
                 <svg class="project-vector" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="400" height="240" fill="#080e1a"/>
                   <circle cx="200" cy="120" r="80" fill="#8b5cf6" fill-opacity="0.05" />
-                  <!-- Dynamic charts inside system -->
-                  <path d="M80,180 L140,110 L200,150 L270,70 L330,120" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M80,180 L140,110 L200,150 L270,70 L330,120 L330,200 L80,200 Z" fill="url(#violetGlow)" opacity="0.1" />
-                  <!-- Bar chart elements on side -->
-                  <rect x="90" y="150" width="16" height="30" rx="3" fill="#3b82f6" />
-                  <rect x="150" y="120" width="16" height="60" rx="3" fill="#ec4899" />
-                  <rect x="220" y="90" width="16" height="90" rx="3" fill="#a855f7" />
-                  <rect x="290" y="130" width="16" height="50" rx="3" fill="#22c55e" />
-                  
-                  <defs>
-                    <linearGradient id="violetGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#8b5cf6" />
-                      <stop offset="100%" stop-color="transparent" />
-                    </linearGradient>
-                  </defs>
-                  
-                  <!-- Floating smile emoticon badge -->
-                  <circle cx="300" cy="70" r="18" fill="#111827" stroke="#22c55e" stroke-width="1.5" />
-                  <circle cx="294" cy="66" r="2" fill="#22c55e" />
-                  <circle cx="306" cy="66" r="2" fill="#22c55e" />
-                  <path d="M292,74 Q300,81 308,74" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" />
+                  <!-- Document Graphic with ATS Gauge circles -->
+                  <rect x="135" y="55" width="130" height="130" rx="8" fill="#111827" stroke="#8b5cf6" stroke-width="1.5" />
+                  <line x1="155" y1="90" x2="245" y2="90" stroke="#374151" stroke-width="2" />
+                  <line x1="155" y1="115" x2="245" y2="115" stroke="#374151" stroke-width="2" />
+                  <line x1="155" y1="140" x2="210" y2="140" stroke="#8b5cf6" stroke-width="2.5" />
+                  <!-- ATS Score circle badge -->
+                  <circle cx="260" cy="70" r="22" fill="#1f2937" stroke="#22c55e" stroke-width="3" />
+                  <text x="249" y="74" fill="#22c55e" font-family="sans-serif" font-weight="bold" font-size="11">95%</text>
+                  <!-- Floating tags -->
+                  <rect x="75" y="130" width="50" height="20" rx="3" fill="#ffedd5" stroke="#f97316" stroke-width="0.5" />
+                  <text x="81" y="143" fill="#f97316" font-family="sans-serif" font-weight="bold" font-size="9">ATS</text>
                 </svg>
               </div>
               <div class="project-content">
-                <h3 class="project-title">Feedback Collection System</h3>
-                <p class="project-desc text-gray-400">Delivered full-stack corporate collector spanning complete lifecycle at CoderOne. Manages structured feedback forms with clean responsive client-side styling paired to a real-time Firestore persistent data pipeline.</p>
+                <h3 class="project-title">AI Resume Analyzer & ATS Optimizer</h3>
+                <p class="project-desc text-gray-400">An interactive system that parses uploaded resumes and computes target semantic similarity parameters matching desired jobs. Formulates ATS compatibility indices, keyword-density maps, and outputs real-time PDF optimization reports.</p>
                 <div class="project-tech">
-                  <span class="tech-pill">HTML5 / CSS3</span>
-                  <span class="tech-pill">Vanilla JS</span>
-                  <span class="tech-pill">NodeJS / Express</span>
-                  <span class="tech-pill">Firebase Firestore</span>
+                  <span class="tech-pill">Gemini-Pro</span>
+                  <span class="tech-pill">PDF-Parse</span>
+                  <span class="tech-pill">MERN Stack</span>
+                  <span class="tech-pill">ATS Scoring Engine</span>
+                  <span class="tech-pill">Recharts</span>
                 </div>
                 <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching Enterprise Feedback Dashboard... Submit reviews, view real-time DB writes on the console logs.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
+                  <a href="https://resume-analyzer-1ni7.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Live Demo</a>
+                  <a href="https://github.com/Leela-sai-krishna-Thota/Resume_Analyzer" target="_blank" class="btn btn-primary">
                     GitHub Code
                   </a>
                 </div>
@@ -679,10 +671,10 @@
               <div class="timeline-dot"></div>
               <div class="timeline-card">
                 <span class="timeline-date">Oct 2024 - Dec 2024</span>
-                <h3 class="timeline-role">Technical Project Lead (SIH 2025)</h3>
+                <h3 class="timeline-role">AI Developer & Technical Lead</h3>
                 <h4 class="timeline-company">Smart India Hackathon Screening</h4>
                 <p class="timeline-desc">
-                  Ranked Top 50 out of 230 institute teams in the internal screening rounds. Engineered the AI medical triage routing software (NANOHEAL) combining Gemini micro-models with active frontend dashboards.
+                  Ranked Top 50 out of 230 institute teams in the internal screening rounds. Engineered the AI Code & Smart Contract security auditor combining Gemini intelligence models with active developer-focused sandboxes.
                 </p>
               </div>
             </div>
@@ -714,7 +706,7 @@
             
             <!-- Card 1 -->
             <div class="edu-card reveal">
-              <span class="timeline-date">2022 - 2026 (Expected)</span>
+              <span class="timeline-date">2023 - 2027 (Expected)</span>
               <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
               <div class="edu-institution">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -730,7 +722,7 @@
               <div class="edu-meta">
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">CGPA Score</span>
-                  <span class="edu-stat-val">9.03 / 10.0</span>
+                  <span class="edu-stat-val">8.89 / 10.0</span>
                 </div>
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Achievements</span>
@@ -741,8 +733,8 @@
 
             <!-- Card 2 -->
             <div class="edu-card reveal delay-200">
-              <span class="timeline-date">2020 - 2022</span>
-              <h3 class="edu-degree">Senior Secondary College</h3>
+              <span class="timeline-date">2021 - 2023</span>
+              <h3 class="edu-degree">Secondary College</h3>
               <div class="edu-institution">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -757,7 +749,7 @@
               <div class="edu-meta">
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Board Score</span>
-                  <span class="edu-stat-val">96.8%</span>
+                  <span class="edu-stat-val">97.7%</span>
                 </div>
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Standings</span>
@@ -853,7 +845,7 @@
                 </div>
                 <div class="contact-card-text">
                   <span class="contact-card-lbl">Call Me</span>
-                  <span class="contact-card-val">+91 949 203 1456</span>
+                  <span class="contact-card-val">+91 7013875338</span>
                 </div>
               </div>
 
@@ -867,7 +859,7 @@
                 </div>
                 <div class="contact-card-text">
                   <span class="contact-card-lbl">Location</span>
-                  <span class="contact-card-val">Hyderabad, India</span>
+                  <span class="contact-card-val">Tadepalligudem, India</span>
                 </div>
               </div>
 
@@ -924,12 +916,12 @@
           </div>
 
           <div class="hero-socials">
-            <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+            <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank" class="social-icon" aria-label="GitHub">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292" target="_blank" class="social-icon" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
@@ -939,7 +931,7 @@
           </div>
 
           <div class="footer-copyright">
-            © 2026 Sai Krishna. Designed & Engineered with raw HTML5/CSS3/JS.
+            © 2026 Sai Krishna. Designed & Engineered.
           </div>
         </div>
       </footer>
@@ -951,6 +943,163 @@
         </svg>
       </button>
 
+    </div>
+
+    <!-- Beautiful, clean LaTeX-style Resume PDF Container (Hidden by default, used for PDF synthesis) -->
+    <div id="resume-pdf-template" style="display: none; background: #ffffff; color: #000000; padding: 45px 50px; font-family: 'Inter', Arial, sans-serif; box-sizing: border-box; line-height: 1.45;">
+      <!-- Header with Name -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h1 style="font-size: 26px; font-weight: 700; margin: 0; letter-spacing: 0.5px; color: #111827;">Thota Leela sai krishna</h1>
+        <div style="font-size: 11px; color: #4338ca; margin-top: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Full-Stack Developer (MERN)</div>
+        
+        <!-- Contact Info Row -->
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 12px; margin-top: 10px; font-size: 11px; color: #4b5563;">
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4b5563;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            +91 7013875338
+          </span>
+          <span style="color: #d1d5db;">|</span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4b5563;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            thotaleelasaikrishna@gmail.com
+          </span>
+          <span style="color: #d1d5db;">|</span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #4b5563;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Tadepalligudem, AP, India, 534196
+          </span>
+        </div>
+        
+        <!-- Social Links Row -->
+        <div style="display: flex; justify-content: center; gap: 14px; margin-top: 8px; font-size: 11px; font-weight: 500;">
+          <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292" target="_blank" style="color: #1d4ed8; text-decoration: none;">LinkedIn</a>
+          <span style="color: #e5e7eb;">•</span>
+          <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank" style="color: #1d4ed8; text-decoration: none;">GitHub</a>
+          <span style="color: #e5e7eb;">•</span>
+          <a href="https://leetcode.com/u/Leela_338/" target="_blank" style="color: #1d4ed8; text-decoration: none;">LeetCode</a>
+        </div>
+      </div>
+
+      <!-- SECTION: SUMMARY -->
+      <div style="margin-bottom: 15px;">
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 4px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Summary</h2>
+        <p style="font-size: 10.5px; color: #374151; margin: 4px 0 0 0; text-align: justify; line-height: 1.45;">
+          Full-Stack Developer (MERN) with hands-on experience building and shipping production-ready web applications. Proficient in JWT authentication, REST APIs, MongoDB Atlas, and Gemini API integration. Passionate about solving real-world problems through clean, scalable code from AI-powered health tools to live sports platforms. Pursuing B.Tech in CSE (CGPA: 8.89) at Vishnu Institute of Technology.
+        </p>
+      </div>
+
+      <!-- SECTION: TECHNICAL SKILLS -->
+      <div style="margin-bottom: 15px;">
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 4px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Technical Skills</h2>
+        <div style="margin-top: 5px; display: flex; flex-direction: column; gap: 3px;">
+          <div style="font-size: 10.5px; color: #374151; line-height: 1.4;"><strong style="color: #111827; font-weight: 600;">Programming:</strong> JavaScript (ES6+), Java</div>
+          <div style="font-size: 10.5px; color: #374151; line-height: 1.4;"><strong style="color: #111827; font-weight: 600;">Frontend:</strong> React.js, HTML5, CSS3, Responsive Web Design</div>
+          <div style="font-size: 10.5px; color: #374151; line-height: 1.4;"><strong style="color: #111827; font-weight: 600;">Backend:</strong> Node.js, Express.js, REST APIs, JWT Authentication</div>
+          <div style="font-size: 10.5px; color: #374151; line-height: 1.4;"><strong style="color: #111827; font-weight: 600;">Databases:</strong> MongoDB, Firebase, SQL</div>
+          <div style="font-size: 10.5px; color: #374151; line-height: 1.4;"><strong style="color: #111827; font-weight: 600;">Tools:</strong> Git, GitHub, Postman, N8N, Gemini API</div>
+        </div>
+      </div>
+
+      <!-- SECTION: PROJECTS -->
+      <div style="margin-bottom: 15px;">
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 6px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Projects</h2>
+        
+        <!-- Project 1 -->
+        <div style="margin-bottom: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">Sports Scheduler Platform (MERN Stack)</span>
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563;">NOV 2025</span>
+          </div>
+          <ul style="margin: 3px 0 0 0; padding-left: 18px; font-size: 10.5px; color: #374151; line-height: 1.4;">
+            <li style="margin-bottom: 1px;">Engineered a full-stack Sports Scheduler using the MERN stack, enabling real-time event creation.</li>
+            <li style="margin-bottom: 1px;">Architected JWT-based authentication with role-specific dashboards for Admin and Player workflows.</li>
+            <li style="margin-bottom: 1px;">Designed admin and player interfaces with live match search, event management, and role-based access.</li>
+            <li style="margin-bottom: 1px;">Deployed MongoDB Atlas for cloud-native data management, ensuring scalable and reliable storage.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">NANOHEAL – AI Medical Assistant Chatbot (SIH 2025)</span>
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563;">OCT 2024</span>
+          </div>
+          <ul style="margin: 3px 0 0 0; padding-left: 18px; font-size: 10.5px; color: #374151; line-height: 1.4;">
+            <li style="margin-bottom: 1px;">Ranked Top 50 out of 230 teams in the SIH 2025 internal screening round.</li>
+            <li style="margin-bottom: 1px;">Integrated Gemini API into a MERN stack application to deliver real-time, symptom-based health guidance.</li>
+            <li style="margin-bottom: 1px;">Prioritised health accessibility and privacy-first architecture in system design decisions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION: EXPERIENCES -->
+      <div style="margin-bottom: 15px;">
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 6px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Experiences</h2>
+        
+        <!-- Experience 1 -->
+        <div style="margin-bottom: 10px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">Web Development Intern — CoderOne</span>
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563;">DEC 2024 - FEB 2025</span>
+          </div>
+          <ul style="margin: 3px 0 0 0; padding-left: 18px; font-size: 10.5px; color: #374151; line-height: 1.4;">
+            <li style="margin-bottom: 1px;">Delivered a full-stack Feedback Collection System across the complete development lifecycle, from UI to Firestore integration, using HTML, CSS, JS, Node.js, and Express.js.</li>
+            <li style="margin-bottom: 1px;">Implemented secure authentication and end-to-end data flow for reliable feedback submission.</li>
+            <li style="margin-bottom: 1px;">Completed a 3-month internship within scope and timeline, earning an official certification from CoderOne.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 2 -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">Direct Selling Partner — Forever Living Products</span>
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563;">MAY 2023 - PRESENT</span>
+          </div>
+          <ul style="margin: 3px 0 0 0; padding-left: 18px; font-size: 10.5px; color: #374151; line-height: 1.4;">
+            <li style="margin-bottom: 1px;">Successfully generated a turnover of 3Lakhs+ through target-market consultations and digital campaign strategies.</li>
+            <li style="margin-bottom: 1px;">Boosted customer brand acquisition by 40% using digital CRM web portfolios.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SECTION: EDUCATION -->
+      <div style="margin-bottom: 15px;">
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 6px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Education</h2>
+        
+        <!-- Education 1 -->
+        <div style="margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline;">
+          <div>
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">Vishnu Institute of Technology</span>
+            <span style="font-size: 11.5px; color: #374151; font-style: italic;"> — B.Tech in CSE</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563; display: block;">2023 - 2027</span>
+            <span style="font-size: 10px; font-weight: 700; color: #111827;">CGPA: 8.89 / 10.0</span>
+          </div>
+        </div>
+
+        <!-- Education 2 -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <div>
+            <span style="font-size: 11.5px; font-weight: 700; color: #111827;">Aditya Junior College</span>
+            <span style="font-size: 11.5px; color: #374151; font-style: italic;"> — Secondary College (MPC)</span>
+          </div>
+          <div style="text-align: right;">
+            <span style="font-size: 10px; font-weight: 600; color: #4b5563; display: block;">2021 - 2023</span>
+            <span style="font-size: 10px; font-weight: 700; color: #111827;">Board Score: 97.7%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION: ACHIEVEMENTS -->
+      <div>
+        <h2 style="font-size: 12px; font-weight: 700; margin: 0 0 4px 0; color: #111827; text-transform: uppercase; letter-spacing: 0.8px; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 3px;">Achievements</h2>
+        <ul style="margin: 5px 0 0 0; padding-left: 18px; font-size: 10.5px; color: #374151; line-height: 1.45;">
+          <li style="margin-bottom: 1px;">Placed Runner-up at Pivot Hackathon built and shipped a full-stack solution under time constraints.</li>
+          <li style="margin-bottom: 1px;">Designed and delivered a Git & GitHub workshop for 65+ students, formally recognised by the CSE.</li>
+          <li style="margin-bottom: 1px;">Attained Diamond Level (Top 3) nationally as Campus Ambassador at Emertxe.</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Master Smooth Interactive Script Module loaded under Vite -->
