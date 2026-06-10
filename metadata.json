@@ -1,0 +1,6 @@
+{
+  "name": "Personal Portfolio",
+  "description": "A premium, modern portfolio website built with HTML, CSS, and Vanilla JavaScript for a computer science student.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
