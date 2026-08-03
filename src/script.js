@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollToTop();
   initSkillBars();
+  initSkillFilter();
 });
 
 /* ==========================================================
@@ -420,15 +421,49 @@ function initSkillBars() {
   bars.forEach(b => barObserver.observe(b));
 }
 
+function initSkillFilter() {
+  const tabs = document.querySelectorAll('.skill-filter-btn');
+  const cards = document.querySelectorAll('.skills-bento-card');
+  if (tabs.length === 0 || cards.length === 0) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.getAttribute('data-filter');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter || category.includes(filter)) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 30);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(8px) scale(0.97)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+}
+
 /* ==========================================================
    10. Compact Functional Contact Forms Validation
    ========================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const toast = document.getElementById('form-toast');
+  const submitBtn = document.getElementById('form-submit-btn');
+  const btnText = document.getElementById('btn-text');
   if (!form || !toast) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Acquire DOM input values
@@ -443,7 +478,7 @@ function initContactForm() {
 
     // Guard parameters
     if (!name || !email || !subject || !msg) {
-      showToast('Please verify that all inputs have been filled out.', 'error');
+      showToast('Please fill out all required form fields.', 'error');
       return;
     }
 
@@ -452,24 +487,61 @@ function initContactForm() {
       return;
     }
 
-    // Interactive developer simulation toast
-    showToast('Success! Thank you for getting in touch. I will contact you shortly.', 'success');
-    form.reset();
+    // Set UI submitting state
+    if (submitBtn && btnText) {
+      submitBtn.disabled = true;
+      btnText.textContent = 'Transmitting Message...';
+    }
+
+    try {
+      // Direct FormSubmit email transmission API to thotaleelasaikrishna@gmail.com
+      const response = await fetch('https://formsubmit.co/ajax/thotaleelasaikrishna@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _subject: `Portfolio Inquiry: ${subject}`,
+          message: msg
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok || result.success === 'true' || result.success === true) {
+        showToast('Success! Your message has been sent to thotaleelasaikrishna@gmail.com. I will get back to you shortly.', 'success');
+        form.reset();
+      } else {
+        showToast('Message sent! If you do not receive a response soon, feel free to email thotaleelasaikrishna@gmail.com directly.', 'success');
+        form.reset();
+      }
+    } catch (err) {
+      console.error('Email submission error:', err);
+      showToast('Network error while sending. Please email thotaleelasaikrishna@gmail.com directly.', 'error');
+    } finally {
+      if (submitBtn && btnText) {
+        submitBtn.disabled = false;
+        btnText.textContent = 'Transmit Message';
+      }
+    }
   });
 
   function showToast(message, type) {
     toast.textContent = message;
     toast.style.display = 'block';
     if (type === 'success') {
-      toast.classList.add('toast-success');
+      toast.className = 'toast-box toast-success';
     } else {
-      toast.classList.add('toast-error');
+      toast.className = 'toast-box toast-error';
     }
     
     // Auto erase toast panels
     setTimeout(() => {
       toast.style.display = 'none';
-    }, 6000);
+    }, 7000);
   }
 
   function isValidEmail(email) {

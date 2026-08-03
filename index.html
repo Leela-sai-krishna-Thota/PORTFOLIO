@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thota Leela Sai Krishna | Portfolio</title>
-    <!-- Favicon placeholder (inline vector for speed) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <!-- Master Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <!-- Master Stylesheet Link -->
     <link rel="stylesheet" href="/src/style.css" />
   </head>
@@ -104,7 +104,7 @@
                 </svg>
               </a>
               <!-- Interactive Resume link with client download trigger -->
-              <a href="javascript:void(0)" onclick="alert('Downloading Thota Leela Sai Krishna\'s technical resume...') " class="btn btn-secondary">
+              <a href="/Thota_Leela_Sai_Krishna_Resume.pdf" download="Thota_Leela_Sai_Krishna_Resume.pdf" class="btn btn-secondary">
                 Download Resume
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -115,19 +115,19 @@
             </div>
 
             <div class="hero-socials">
-              <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="social-icon" aria-label="GitHub">
+              <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank" class="social-icon" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
               </a>
-              <a href="https://linkedin.com/in/thotaleelasaikrishna" target="_blank" class="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292/" target="_blank" class="social-icon" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="https://leetcode.com" target="_blank" class="social-icon" aria-label="LeetCode">
+              <a href="https://leetcode.com/u/Leela_338/" target="_blank" class="social-icon" aria-label="LeetCode">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="16 18 22 12 16 6"></polyline>
                   <polyline points="8 6 2 12 8 18"></polyline>
@@ -211,7 +211,7 @@
                   </svg>
                 </div>
                 <h3>Education</h3>
-                <p>Pursuing B.Tech in CSE with a CGPA of 9.03/10 at Vishnu Institute of Technology, specializing in core algorithms and system architectures.</p>
+                <p>Pursuing B.Tech in CSE with a CGPA of 8.89/10 at Vishnu Institute of Technology, specializing in core algorithms and system architectures.</p>
               </div>
 
               <!-- Bento Card 2 -->
@@ -254,15 +254,15 @@
               <!-- Counter stats cards -->
               <div class="stats-grid">
                 <div class="stat-item">
-                  <span class="stat-num" data-value="15" data-suffix="+">0+</span>
+                  <span class="stat-num" data-value="5" data-suffix="+">0+</span>
                   <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-num" data-value="450" data-suffix="+">0+</span>
+                  <span class="stat-num" data-value="200" data-suffix="+">0+</span>
                   <span class="stat-label">LeetCode</span>
                 </div>
                 <div class="stat-item">
-                  <span class="stat-num" data-value="9" data-suffix=".03">0</span>
+                  <span class="stat-num" data-value="8" data-suffix=".89">0</span>
                   <span class="stat-label">B.Tech CGPA</span>
                 </div>
               </div>
@@ -275,220 +275,309 @@
       <section id="skills" class="skills-section">
         <div class="container">
           <span class="section-tag reveal">Power-Ups</span>
-          <h2 class="section-title reveal">Technical Skills</h2>
+          <h2 class="section-title reveal">Technical Skills & Arsenal</h2>
 
-          <div class="skills-grid">
+          <!-- Interactive Filter Tabs -->
+          <div class="skills-filter-container reveal">
+            <button class="skill-filter-btn active" data-filter="all">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+              All Tech
+            </button>
+            <button class="skill-filter-btn" data-filter="frontend">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              Frontend
+            </button>
+            <button class="skill-filter-btn" data-filter="backend">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              Backend & DB
+            </button>
+            <button class="skill-filter-btn" data-filter="languages">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              Languages & CS
+            </button>
+            <button class="skill-filter-btn" data-filter="tools">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
+              Tools & AI
+            </button>
+          </div>
+
+          <!-- Bento Grid Layout -->
+          <div class="skills-bento-grid">
             
-            <!-- Category 1: Languages -->
-            <div class="skills-card reveal">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
+            <!-- Bento 1: Frontend Architecture -->
+            <div class="skills-bento-card reveal" data-category="frontend">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  </div>
+                  <h3>Frontend Architecture</h3>
                 </div>
-                <h3>Programming</h3>
+                <span class="skills-count-pill">4 SKILLS</span>
               </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">JavaScript (ES6+)</span>
-                    <span class="skill-val">92%</span>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">⚛️</span>
+                      <span class="skill-tech-name">React.js Framework</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="92%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Java SE Standard</span>
-                    <span class="skill-val">88%</span>
-                  </div>
-                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
-                </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">HTML5 & CSS3 Standard</span>
-                    <span class="skill-val">95%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">⚡</span>
+                      <span class="skill-tech-name">JavaScript (ES6+)</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="95%"></div></div>
                 </div>
-              </div>
-            </div>
-
-            <!-- Category 2: Frontend -->
-            <div class="skills-card reveal delay-100">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🌐</span>
+                      <span class="skill-tech-name">HTML5 & CSS3 Standard</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="95%"></div></div>
                 </div>
-                <h3>Frontend Architecture</h3>
-              </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">ReactJS Framework</span>
-                    <span class="skill-val">90%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🎨</span>
+                      <span class="skill-tech-name">Tailwind CSS</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Responsive Web Design</span>
-                    <span class="skill-val">93%</span>
-                  </div>
-                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="93%"></div></div>
-                </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Semantic DOM Structuring</span>
-                    <span class="skill-val">94%</span>
-                  </div>
-                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="94%"></div></div>
-                </div>
               </div>
             </div>
 
-            <!-- Category 3: Backend -->
-            <div class="skills-card reveal delay-200">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-                    <line x1="7" y1="2" x2="7" y2="22"></line>
-                  </svg>
-                </div>
-                <h3>Backend Engineering</h3>
-              </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Node.js / Express.js Servers</span>
-                    <span class="skill-val">88%</span>
+            <!-- Bento 2: Backend Engineering -->
+            <div class="skills-bento-card reveal delay-100" data-category="backend">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line></svg>
                   </div>
-                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
+                  <h3>Backend Systems</h3>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">RESTful APIs Architecture</span>
-                    <span class="skill-val">92%</span>
+                <span class="skills-count-pill">3 SKILLS</span>
+              </div>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🟢</span>
+                      <span class="skill-tech-name">Node.js & Express.js</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
+                </div>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🔗</span>
+                      <span class="skill-tech-name">RESTful APIs Architecture</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="92%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">JWT Secure Auth</span>
-                    <span class="skill-val">90%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🔑</span>
+                      <span class="skill-tech-name">JWT Secure Auth</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
               </div>
             </div>
 
-            <!-- Category 4: Databases -->
-            <div class="skills-card reveal">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                    <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
-                  </svg>
+            <!-- Bento 3: Databases & Cloud -->
+            <div class="skills-bento-card reveal delay-200" data-category="backend">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path></svg>
+                  </div>
+                  <h3>Databases & Cloud</h3>
                 </div>
-                <h3>Databases & Cloud</h3>
+                <span class="skills-count-pill">3 SKILLS</span>
               </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">MongoDB Database Atlas</span>
-                    <span class="skill-val">88%</span>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🍃</span>
+                      <span class="skill-tech-name">MongoDB Database Atlas</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Firebase (Firestore/Auth)</span>
-                    <span class="skill-val">85%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🔥</span>
+                      <span class="skill-tech-name">Firebase (Auth/Firestore)</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">SQL Relational Database</span>
-                    <span class="skill-val">80%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🗄️</span>
+                      <span class="skill-tech-name">SQL Relational Databases</span>
+                    </div>
+                    <span class="skill-level-badge badge-proficient">PROFICIENT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="80%"></div></div>
                 </div>
               </div>
             </div>
 
-            <!-- Category 5: AI & Automation -->
-            <div class="skills-card reveal delay-100">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2a10 10 0 0 1 7.54 16.59c-.58.36-.54 1.25-.11 1.76l1.15 1.35c.34.4.1.1-.19-.1l-1.32-1.32c-.52-.52-.16-1.31.53-1.42A8 8 0 1 0 12 18"></path>
-                    <path d="M12 8v4l3 3"></path>
-                  </svg>
-                </div>
-                <h3>AI & Integrations</h3>
-              </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Gemini API Integrations</span>
-                    <span class="skill-val">90%</span>
+            <!-- Bento 4: Languages & CS -->
+            <div class="skills-bento-card reveal" data-category="languages">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
                   </div>
-                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
+                  <h3>Core Languages</h3>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">N8N AI Agent Workflows</span>
-                    <span class="skill-val">84%</span>
+                <span class="skills-count-pill">3 SKILLS</span>
+              </div>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">☕</span>
+                      <span class="skill-tech-name">Java (Core & OOP)</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
+                </div>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🐍</span>
+                      <span class="skill-tech-name">Python Programming</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="85%"></div></div>
+                </div>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">💻</span>
+                      <span class="skill-tech-name">Core Computer Science</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="86%"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bento 5: AI & Integrations -->
+            <div class="skills-bento-card reveal delay-100" data-category="tools">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 7.54 16.59c-.58.36-.54 1.25-.11 1.76l1.15 1.35c.34.4.1.1-.19-.1l-1.32-1.32c-.52-.52-.16-1.31.53-1.42A8 8 0 1 0 12 18"></path><path d="M12 8v4l3 3"></path></svg>
+                  </div>
+                  <h3>AI & Integrations</h3>
+                </div>
+                <span class="skills-count-pill">3 SKILLS</span>
+              </div>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">✨</span>
+                      <span class="skill-tech-name">Gemini API Integration</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
+                  </div>
+                  <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="92%"></div></div>
+                </div>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">⚙️</span>
+                      <span class="skill-tech-name">N8N AI Workflows</span>
+                    </div>
+                    <span class="skill-level-badge badge-proficient">PROFICIENT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="84%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Postman API Testing Suite</span>
-                    <span class="skill-val">88%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🚀</span>
+                      <span class="skill-tech-name">Postman API Suite</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
                 </div>
               </div>
             </div>
 
-            <!-- Category 6: Tools & Workflow -->
-            <div class="skills-card reveal delay-200">
-              <div class="skills-card-header">
-                <div class="skills-icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                  </svg>
+            <!-- Bento 6: Tools & Workflow -->
+            <div class="skills-bento-card reveal delay-200" data-category="tools languages">
+              <div class="skills-bento-header">
+                <div class="skills-bento-title-group">
+                  <div class="skills-bento-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  </div>
+                  <h3>Tools & CS Logic</h3>
                 </div>
-                <h3>Tools & Workflow</h3>
+                <span class="skills-count-pill">3 SKILLS</span>
               </div>
-              <div class="skills-list">
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Git / GitHub Collaborative</span>
-                    <span class="skill-val">95%</span>
+              <div class="skills-list-wrapper">
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🐙</span>
+                      <span class="skill-tech-name">Git & GitHub</span>
+                    </div>
+                    <span class="skill-level-badge badge-expert">EXPERT</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="95%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Technical Mentorship</span>
-                    <span class="skill-val">90%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">🌲</span>
+                      <span class="skill-tech-name">Data Structures & Algo</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="90%"></div></div>
                 </div>
-                <div class="skill-list-item">
-                  <div class="skill-info-row">
-                    <span class="skill-name">Project Leadership Management</span>
-                    <span class="skill-val">88%</span>
+                <div class="skill-row-item">
+                  <div class="skill-row-top">
+                    <div class="skill-tech-meta">
+                      <span class="skill-tech-icon">☁️</span>
+                      <span class="skill-tech-name">Vercel & Render Cloud</span>
+                    </div>
+                    <span class="skill-level-badge badge-advanced">ADVANCED</span>
                   </div>
                   <div class="skill-bar-outer"><div class="skill-bar-inner" data-width="88%"></div></div>
                 </div>
@@ -496,6 +585,28 @@
             </div>
 
           </div>
+
+          <!-- Bottom Tech Cloud Banner -->
+          <div class="skills-cloud-banner reveal">
+            <h4 class="skills-cloud-title">Core Stack & Tech Ecosystem</h4>
+            <div class="skills-cloud-pills">
+              <span class="cloud-pill">⚛️ React.js</span>
+              <span class="cloud-pill">🟢 Node.js</span>
+              <span class="cloud-pill">⚡ Express.js</span>
+              <span class="cloud-pill">🍃 MongoDB Atlas</span>
+              <span class="cloud-pill">☕ Java</span>
+              <span class="cloud-pill">🐍 Python</span>
+              <span class="cloud-pill">🎨 Tailwind CSS</span>
+              <span class="cloud-pill">🔑 JWT Auth</span>
+              <span class="cloud-pill">🔥 Firebase</span>
+              <span class="cloud-pill">✨ Gemini API</span>
+              <span class="cloud-pill">🐙 Git & GitHub</span>
+              <span class="cloud-pill">🚀 Postman</span>
+              <span class="cloud-pill">🌲 DSA</span>
+              <span class="cloud-pill">☁️ Vercel / Render</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -540,96 +651,77 @@
                   <span class="tech-pill">JWT</span>
                 </div>
                 <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching Live Sports Scheduler... Experience real-time field booking, calendar grids, and role-based login simulations.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
+                  <a href="https://sp-lac-ten.vercel.app/" target="_blank" class="btn btn-secondary">Live Demo</a>
+                  <a href="https://github.com/Leela-sai-krishna-Thota/SP" target="_blank" class="btn btn-primary">
                     GitHub Code
                   </a>
                 </div>
               </div>
             </div>
 
-            <!-- Project 2: NANOHEAL – AI Medical Assistant (SIH 2025) -->
+            <!-- Project 2: E-Commerce Platform (MERN Stack) -->
             <div class="project-card reveal delay-100">
               <div class="project-display">
-                <span class="project-tag">AI Medical Assistant</span>
+                <span class="project-tag">MERN E-Commerce</span>
                 <!-- Project Vector Representation -->
                 <svg class="project-vector" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="400" height="240" fill="#080e1a"/>
-                  <circle cx="200" cy="120" r="85" fill="#a855f7" fill-opacity="0.04" />
-                  <!-- Heartbeat pulse wave -->
-                  <path d="M60,120 L130,120 L145,90 L160,150 L175,100 L190,130 L205,120 L270,120 L285,70 L300,170 L315,110 L330,120 L350,120" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <!-- Glowing chat bubble & Neural nodes -->
-                  <rect x="140" y="45" width="120" height="40" rx="10" fill="#111827" stroke="#a855f7" stroke-width="1.5" />
-                  <circle cx="160" cy="65" r="4" fill="#a855f7" />
-                  <circle cx="172" cy="65" r="4" fill="#a855f7" />
-                  <circle cx="184" cy="65" r="4" fill="#a855f7" />
-                  <path d="M250,85 L250,95 L240,85 Z" fill="#111827" stroke="#a855f7" stroke-width="1.5" />
-                  <text x="200" y="69" fill="#10b981" font-family="monospace" font-size="10" font-weight="bold">AI: ACTIVE</text>
-                  <!-- Floating cross symbol -->
-                  <path d="M315,45 L325,45 M320,40 L320,50" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round" />
-                </svg>
-              </div>
-              <div class="project-content">
-                <h3 class="project-title">NANOHEAL AI Medical Companion</h3>
-                <p class="project-desc font-sans">Ranked Top 50 in the SIH 2025 screening out of 230 teams. Harnesses deep integration with Gemini API inside Node environment to serve real-time diagnostic guidance, prioritize health privacy, and ensure client health accessibility.</p>
-                <div class="project-tech">
-                  <span class="tech-pill">Gemini API</span>
-                  <span class="tech-pill">MERN Stack</span>
-                  <span class="tech-pill">AI Prompting</span>
-                  <span class="tech-pill">Privacy Protocols</span>
-                </div>
-                <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching NANOHEAL Hospital/Patient Interface... Ask symptom cases, view secure privacy-first triage recommendations.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
-                    GitHub Code
-                  </a>
-                </div>
-              </div>
-            </div>
+                  <circle cx="200" cy="120" r="85" fill="#10b981" fill-opacity="0.04" />
+                  
+                  <!-- Storefront / Shopping window outline -->
+                  <rect x="70" y="45" width="260" height="150" rx="10" fill="#111827" stroke="#10b981" stroke-width="1.5" />
+                  
+                  <!-- Navigation bar inside app preview -->
+                  <rect x="70" y="45" width="260" height="28" rx="10" fill="#1f2937" />
+                  <circle cx="85" cy="59" r="4" fill="#ef4444" />
+                  <circle cx="97" cy="59" r="4" fill="#f59e0b" />
+                  <circle cx="109" cy="59" r="4" fill="#10b981" />
+                  <text x="130" y="63" fill="#9ca3af" font-family="sans-serif" font-size="9" font-weight="bold">STORE / CATALOG</text>
 
-            <!-- Project 3: Feedback Collection System -->
-            <div class="project-card reveal">
-              <div class="project-display">
-                <span class="project-tag">Enterprise System</span>
-                <!-- Project Vector Representation -->
-                <svg class="project-vector" viewBox="0 0 400 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="400" height="240" fill="#080e1a"/>
-                  <circle cx="200" cy="120" r="80" fill="#8b5cf6" fill-opacity="0.05" />
-                  <!-- Dynamic charts inside system -->
-                  <path d="M80,180 L140,110 L200,150 L270,70 L330,120" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M80,180 L140,110 L200,150 L270,70 L330,120 L330,200 L80,200 Z" fill="url(#violetGlow)" opacity="0.1" />
-                  <!-- Bar chart elements on side -->
-                  <rect x="90" y="150" width="16" height="30" rx="3" fill="#3b82f6" />
-                  <rect x="150" y="120" width="16" height="60" rx="3" fill="#ec4899" />
-                  <rect x="220" y="90" width="16" height="90" rx="3" fill="#a855f7" />
-                  <rect x="290" y="130" width="16" height="50" rx="3" fill="#22c55e" />
-                  
-                  <defs>
-                    <linearGradient id="violetGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#8b5cf6" />
-                      <stop offset="100%" stop-color="transparent" />
-                    </linearGradient>
-                  </defs>
-                  
-                  <!-- Floating smile emoticon badge -->
-                  <circle cx="300" cy="70" r="18" fill="#111827" stroke="#22c55e" stroke-width="1.5" />
-                  <circle cx="294" cy="66" r="2" fill="#22c55e" />
-                  <circle cx="306" cy="66" r="2" fill="#22c55e" />
-                  <path d="M292,74 Q300,81 308,74" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" />
+                  <!-- Shopping Cart Icon -->
+                  <path d="M295,53 L300,53 L305,65 L315,65" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="306" cy="68" r="1.5" fill="#10b981"/>
+                  <circle cx="313" cy="68" r="1.5" fill="#10b981"/>
+
+                  <!-- Product Cards inside preview -->
+                  <rect x="85" y="85" width="65" height="95" rx="6" fill="#1f2937" stroke="#374151" stroke-width="1" />
+                  <rect x="92" y="92" width="51" height="40" rx="4" fill="#3b82f6" fill-opacity="0.3" />
+                  <text x="94" y="145" fill="#e5e7eb" font-family="sans-serif" font-size="9" font-weight="bold">Item A</text>
+                  <text x="94" y="157" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="bold">$49.99</text>
+                  <rect x="92" y="163" width="51" height="12" rx="3" fill="#10b981" />
+                  <text x="105" y="172" fill="#042f2e" font-family="sans-serif" font-size="7" font-weight="bold">ADD</text>
+
+                  <rect x="160" y="85" width="65" height="95" rx="6" fill="#1f2937" stroke="#374151" stroke-width="1" />
+                  <rect x="167" y="92" width="51" height="40" rx="4" fill="#8b5cf6" fill-opacity="0.3" />
+                  <text x="169" y="145" fill="#e5e7eb" font-family="sans-serif" font-size="9" font-weight="bold">Item B</text>
+                  <text x="169" y="157" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="bold">$89.99</text>
+                  <rect x="167" y="163" width="51" height="12" rx="3" fill="#10b981" />
+                  <text x="180" y="172" fill="#042f2e" font-family="sans-serif" font-size="7" font-weight="bold">ADD</text>
+
+                  <!-- Checkout status badge -->
+                  <rect x="238" y="85" width="80" height="95" rx="6" fill="#1f2937" stroke="#10b981" stroke-width="1" />
+                  <text x="245" y="100" fill="#9ca3af" font-family="sans-serif" font-size="8" font-weight="bold">ORDER SUMMARY</text>
+                  <line x1="245" y1="106" x2="310" y2="106" stroke="#374151" stroke-width="1" />
+                  <text x="245" y="120" fill="#d1d5db" font-family="sans-serif" font-size="8">Subtotal: $139.98</text>
+                  <text x="245" y="132" fill="#d1d5db" font-family="sans-serif" font-size="8">JWT Session: Active</text>
+                  <rect x="245" y="145" width="66" height="22" rx="4" fill="#3b82f6" />
+                  <text x="253" y="159" fill="#ffffff" font-family="sans-serif" font-size="8" font-weight="bold">CHECKOUT</text>
                 </svg>
               </div>
               <div class="project-content">
-                <h3 class="project-title">Feedback Collection System</h3>
-                <p class="project-desc text-gray-400">Delivered full-stack corporate collector spanning complete lifecycle at CoderOne. Manages structured feedback forms with clean responsive client-side styling paired to a real-time Firestore persistent data pipeline.</p>
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-desc">Full-stack E-Commerce web application built using the MERN stack. Features a complete customer shopping experience with secure JWT user authentication, personalized user sessions, responsive React.js product catalog, shopping cart, and order management backed by RESTful APIs & MongoDB.</p>
                 <div class="project-tech">
-                  <span class="tech-pill">HTML5 / CSS3</span>
-                  <span class="tech-pill">Vanilla JS</span>
-                  <span class="tech-pill">NodeJS / Express</span>
-                  <span class="tech-pill">Firebase Firestore</span>
+                  <span class="tech-pill">MERN Stack</span>
+                  <span class="tech-pill">React.js</span>
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">Express.js</span>
+                  <span class="tech-pill">MongoDB Atlas</span>
+                  <span class="tech-pill">JWT Auth</span>
                 </div>
                 <div class="project-actions">
-                  <button class="btn btn-secondary" onclick="alert('Launching Enterprise Feedback Dashboard... Submit reviews, view real-time DB writes on the console logs.')">Live Demo</button>
-                  <a href="https://github.com/thotaleelasaikrishna" target="_blank" class="btn btn-primary">
+                  <a href="https://shopty-1.onrender.com" target="_blank" class="btn btn-secondary">Live Demo</a>
+                  <a href="https://github.com/Leela-sai-krishna-Thota/shopty" target="_blank" class="btn btn-primary">
                     GitHub Code
                   </a>
                 </div>
@@ -652,7 +744,7 @@
             <div class="timeline-item timeline-item-left reveal">
               <div class="timeline-dot"></div>
               <div class="timeline-card">
-                <span class="timeline-date">Oct 2024 - Present</span>
+                <span class="timeline-date">DEC 2024 – FEB 2025</span>
                 <h3 class="timeline-role">Web Development Intern</h3>
                 <h4 class="timeline-company">CoderOne Technologies</h4>
                 <p class="timeline-desc">
@@ -665,7 +757,7 @@
             <div class="timeline-item timeline-item-right reveal delay-100">
               <div class="timeline-dot"></div>
               <div class="timeline-card">
-                <span class="timeline-date">May 2023 - Present</span>
+                <span class="timeline-date">Oct 2025 - Mar 2026</span>
                 <h3 class="timeline-role">Direct Selling Partner</h3>
                 <h4 class="timeline-company">Forever Living Products</h4>
                 <p class="timeline-desc">
@@ -678,11 +770,11 @@
             <div class="timeline-item timeline-item-left reveal delay-200">
               <div class="timeline-dot"></div>
               <div class="timeline-card">
-                <span class="timeline-date">Oct 2024 - Dec 2024</span>
+                <span class="timeline-date">Oct 2024 - Nov 2024</span>
                 <h3 class="timeline-role">Technical Project Lead (SIH 2025)</h3>
                 <h4 class="timeline-company">Smart India Hackathon Screening</h4>
                 <p class="timeline-desc">
-                  Ranked Top 50 out of 230 institute teams in the internal screening rounds. Engineered the AI medical triage routing software (NANOHEAL) combining Gemini micro-models with active frontend dashboards.
+                  Ranked Top 50 out of 230 institute teams in the internal screening rounds. Engineered AI triage routing software combining Gemini micro-models with active frontend dashboards.
                 </p>
               </div>
             </div>
@@ -714,7 +806,7 @@
             
             <!-- Card 1 -->
             <div class="edu-card reveal">
-              <span class="timeline-date">2022 - 2026 (Expected)</span>
+              <span class="timeline-date">2023 - 2027</span>
               <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
               <div class="edu-institution">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -730,7 +822,7 @@
               <div class="edu-meta">
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">CGPA Score</span>
-                  <span class="edu-stat-val">9.03 / 10.0</span>
+                  <span class="edu-stat-val">8.89 / 10.0</span>
                 </div>
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Achievements</span>
@@ -741,7 +833,7 @@
 
             <!-- Card 2 -->
             <div class="edu-card reveal delay-200">
-              <span class="timeline-date">2020 - 2022</span>
+              <span class="timeline-date">2021 - 2023</span>
               <h3 class="edu-degree">Senior Secondary College</h3>
               <div class="edu-institution">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -757,7 +849,7 @@
               <div class="edu-meta">
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Board Score</span>
-                  <span class="edu-stat-val">96.8%</span>
+                  <span class="edu-stat-val">97.7%</span>
                 </div>
                 <div class="edu-stat">
                   <span class="edu-stat-lbl">Standings</span>
@@ -786,9 +878,9 @@
                   <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
                 </svg>
               </div>
-              <h3 class="achieve-title">LeetCode Active Problem Solver</h3>
+              <h3 class="achieve-title">Solved 200+ DSA Problems</h3>
               <span class="achieve-issuer">LeetCode Profile</span>
-              <p class="achieve-desc">Consistent problem solver on LeetCode with focusing on active DSA methodologies, search optimization algorithms, and logic trees.</p>
+              <p class="achieve-desc">Solved 200+ Data Structures & Algorithms problems on LeetCode focusing on search optimization, trees, dynamic programming, and logic trees.</p>
             </div>
 
             <!-- Medal 2 -->
@@ -798,9 +890,9 @@
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
               </div>
-              <h3 class="achieve-title">SIH 2025 Top 50 Finalist</h3>
+              <h3 class="achieve-title">SIH 2025 Top 50 Ranker</h3>
               <span class="achieve-issuer">Smart India Hackathon Internal Rounds</span>
-              <p class="achieve-desc">Recognized in the Top 50 teams at Vishnu Institute of Technology out of 230+ competing squads for our NANOHEAL AI Companion.</p>
+              <p class="achieve-desc">SIH 2025 Top 50 out of 230 teams in college level</p>
             </div>
 
             <!-- Medal 3 -->
@@ -853,7 +945,7 @@
                 </div>
                 <div class="contact-card-text">
                   <span class="contact-card-lbl">Call Me</span>
-                  <span class="contact-card-val">+91 949 203 1456</span>
+                  <span class="contact-card-val"><a href="tel:+917013875338">+91 7013875338</a></span>
                 </div>
               </div>
 
@@ -867,7 +959,7 @@
                 </div>
                 <div class="contact-card-text">
                   <span class="contact-card-lbl">Location</span>
-                  <span class="contact-card-val">Hyderabad, India</span>
+                  <span class="contact-card-val">Tadepalligudem, Andhra Pradesh, India</span>
                 </div>
               </div>
 
@@ -878,26 +970,28 @@
               <!-- Inline Form Response Alert feedback -->
               <div class="toast-box" id="form-toast"></div>
 
-              <form id="contact-form" autocomplete="off" action="#">
+              <form id="contact-form" autocomplete="off" action="https://formsubmit.co/thotaleelasaikrishna@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <div class="form-group">
-                  <input type="text" id="form-name" placeholder=" " class="form-input" required>
+                  <input type="text" id="form-name" name="name" placeholder=" " class="form-input" required>
                   <label for="form-name" class="form-label">Full Name</label>
                 </div>
                 <div class="form-group">
-                  <input type="email" id="form-email" placeholder=" " class="form-input" required>
+                  <input type="email" id="form-email" name="email" placeholder=" " class="form-input" required>
                   <label for="form-email" class="form-label">Email Address</label>
                 </div>
                 <div class="form-group">
-                  <input type="text" id="form-subject" placeholder=" " class="form-input" required>
+                  <input type="text" id="form-subject" name="_subject" placeholder=" " class="form-input" required>
                   <label for="form-subject" class="form-label">Subject</label>
                 </div>
                 <div class="form-group">
-                  <textarea id="form-message" rows="4" placeholder=" " class="form-input" required style="resize: none;"></textarea>
+                  <textarea id="form-message" name="message" rows="4" placeholder=" " class="form-input" required style="resize: none;"></textarea>
                   <label for="form-message" class="form-label">Your Message...</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="border: none;">
-                  Transmit Message
+                <button type="submit" id="form-submit-btn" class="btn btn-primary" style="border: none;">
+                  <span id="btn-text">Transmit Message</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -924,16 +1018,23 @@
           </div>
 
           <div class="hero-socials">
-            <a href="https://github.com" target="_blank" class="social-icon" aria-label="GitHub">
+            <a href="https://github.com/Leela-sai-krishna-Thota" target="_blank" class="social-icon" aria-label="GitHub">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
               </svg>
             </a>
-            <a href="https://linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/thota-leela-sai-krishna-8003a6292/" target="_blank" class="social-icon" aria-label="LinkedIn">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="https://leetcode.com/u/Leela_338/" target="_blank" class="social-icon" aria-label="LeetCode">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="14" y1="4" x2="10" y2="20"></line>
               </svg>
             </a>
           </div>
