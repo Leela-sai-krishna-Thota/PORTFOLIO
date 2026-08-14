@@ -1,0 +1,378 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Outer Deep Black Vignette -->
+    <radialGradient id="outerVignette" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#0a0718" />
+      <stop offset="95%" stop-color="#04020a" />
+      <stop offset="100%" stop-color="#000000" />
+    </radialGradient>
+
+    <!-- Vibrant Royal Blue / Violet Studio Backdrop Circle -->
+    <radialGradient id="studioBlueGlow" cx="50%" cy="46%" r="48%">
+      <stop offset="0%" stop-color="#604fe6" />
+      <stop offset="35%" stop-color="#4432c2" />
+      <stop offset="65%" stop-color="#2a1b94" />
+      <stop offset="88%" stop-color="#180e60" />
+      <stop offset="100%" stop-color="#0e0638" />
+    </radialGradient>
+
+    <!-- Studio Rim Light Glow -->
+    <linearGradient id="rimLight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c7dff" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#4f3fe8" stop-opacity="0" />
+      <stop offset="100%" stop-color="#8c7dff" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- South Asian Skin Tone Complex Gradients -->
+    <linearGradient id="skinFace" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfa072" />
+      <stop offset="35%" stop-color="#cb8654" />
+      <stop offset="75%" stop-color="#b6713d" />
+      <stop offset="100%" stop-color="#9a5a29" />
+    </linearGradient>
+
+    <radialGradient id="skinCheekGlow" cx="45%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#eeb086" />
+      <stop offset="60%" stop-color="#d68f5d" />
+      <stop offset="100%" stop-color="#b6713d" />
+    </radialGradient>
+
+    <linearGradient id="skinNeck" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7d441c" />
+      <stop offset="35%" stop-color="#9e5c2b" />
+      <stop offset="100%" stop-color="#ba7541" />
+    </linearGradient>
+
+    <linearGradient id="skinHands" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfa072" />
+      <stop offset="50%" stop-color="#cb8654" />
+      <stop offset="100%" stop-color="#a86532" />
+    </linearGradient>
+
+    <!-- Hair Shading -->
+    <linearGradient id="hairBase" x1="0%" y1="0%" x2="20%" y2="100%">
+      <stop offset="0%" stop-color="#2d221e" />
+      <stop offset="30%" stop-color="#1a1310" />
+      <stop offset="85%" stop-color="#0c0807" />
+      <stop offset="100%" stop-color="#050302" />
+    </linearGradient>
+
+    <linearGradient id="hairHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#54413b" />
+      <stop offset="40%" stop-color="#382924" />
+      <stop offset="100%" stop-color="#1a1310" />
+    </linearGradient>
+
+    <!-- Mauve / Lavender-Purple Collared Shirt Gradients -->
+    <linearGradient id="shirtBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9e7388" />
+      <stop offset="25%" stop-color="#8a5f74" />
+      <stop offset="60%" stop-color="#764b60" />
+      <stop offset="100%" stop-color="#5c3649" />
+    </linearGradient>
+
+    <linearGradient id="shirtArmLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a47a8f" />
+      <stop offset="45%" stop-color="#885e72" />
+      <stop offset="100%" stop-color="#60394c" />
+    </linearGradient>
+
+    <linearGradient id="shirtArmRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6a4255" />
+      <stop offset="50%" stop-color="#8d6276" />
+      <stop offset="100%" stop-color="#a67c91" />
+    </linearGradient>
+
+    <linearGradient id="shirtCollar" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b2889e" />
+      <stop offset="70%" stop-color="#8c6175" />
+      <stop offset="100%" stop-color="#693f53" />
+    </linearGradient>
+
+    <!-- Watch Materials -->
+    <linearGradient id="watchBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#d4d4d8" />
+      <stop offset="70%" stop-color="#71717a" />
+      <stop offset="100%" stop-color="#e4e4e7" />
+    </linearGradient>
+
+    <radialGradient id="watchDial" cx="45%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="75%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+
+    <linearGradient id="watchStrap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="50%" stop-color="#27272a" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+
+    <!-- Soft Filter for Studio Glow -->
+    <filter id="glowSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Black Backdrop -->
+  <rect width="500" height="500" fill="url(#outerVignette)" />
+
+  <!-- Circular Royal Blue/Purple Studio Spotlight from Photo -->
+  <circle cx="250" cy="245" r="235" fill="url(#studioBlueGlow)" />
+  <circle cx="250" cy="245" r="235" fill="url(#rimLight)" />
+
+  <!-- Subtle Studio Spotlight Soft Flare behind Head -->
+  <circle cx="250" cy="170" r="140" fill="#7564f5" opacity="0.18" filter="url(#glowSoft)" />
+
+  <!-- ==================== BODY & SHIRT LAYER ==================== -->
+  <g id="torso-and-clothing">
+    <!-- Main Shirt Body -->
+    <path d="M125,385 C130,290 170,230 205,215 L295,215 C330,230 370,290 375,385 C377,430 365,490 350,500 L150,500 C135,490 123,430 125,385 Z" fill="url(#shirtBody)" />
+
+    <!-- Shirt Side Shadow Folds -->
+    <path d="M125,385 C132,320 160,265 190,235 C175,280 155,360 150,440 L130,480 C125,445 124,410 125,385 Z" fill="#4d2b3b" opacity="0.6" />
+    <path d="M375,385 C368,320 340,265 310,235 C325,280 345,360 350,440 L370,480 C375,445 376,410 375,385 Z" fill="#4d2b3b" opacity="0.6" />
+
+    <!-- Center Button Placket -->
+    <path d="M243,230 L257,230 L256,410 L244,410 Z" fill="#6a3e52" />
+    <path d="M245,230 L255,230 L254,410 L246,410 Z" fill="#885c70" />
+
+    <!-- Pearl Buttons with Highlights -->
+    <circle cx="250" cy="275" r="3.5" fill="#f4f4f5" />
+    <circle cx="250" cy="275" r="2.5" fill="#e4e4e7" stroke="#71717a" stroke-width="0.6" />
+    
+    <circle cx="250" cy="335" r="3.5" fill="#f4f4f5" />
+    <circle cx="250" cy="335" r="2.5" fill="#e4e4e7" stroke="#71717a" stroke-width="0.6" />
+
+    <circle cx="250" cy="395" r="3.5" fill="#f4f4f5" />
+    <circle cx="250" cy="395" r="2.5" fill="#e4e4e7" stroke="#71717a" stroke-width="0.6" />
+
+    <!-- Left Chest Crest / Brand Logo Badge (from original photo) -->
+    <g transform="translate(330, 318)">
+      <path d="M0,0 L7,4 L3,10 L-3,10 L-7,4 Z" fill="#1e1b4b" opacity="0.85" />
+      <circle cx="0" cy="4" r="3" fill="#dc2626" />
+      <path d="M-2,2 L2,2 L0,6 Z" fill="#3b82f6" />
+    </g>
+
+    <!-- Shirt Creases & Wrinkle Contours -->
+    <path d="M185,275 C210,290 235,310 245,315" stroke="#5a3346" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.45" />
+    <path d="M315,275 C290,290 265,310 255,315" stroke="#5a3346" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.45" />
+    <path d="M190,340 C220,350 240,360 245,365" stroke="#5a3346" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4" />
+    <path d="M310,340 C280,350 260,360 255,365" stroke="#5a3346" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4" />
+  </g>
+
+  <!-- ==================== NECK & COLLAR LAYER ==================== -->
+  <g id="neck-collar">
+    <!-- Neck -->
+    <path d="M218,175 C218,220 225,250 250,250 C275,250 282,220 282,175 Z" fill="url(#skinNeck)" />
+    
+    <!-- Throat Shadow / Adams Apple Contour -->
+    <path d="M240,215 C246,220 254,220 260,215 C256,227 244,227 240,215 Z" fill="#6d3916" opacity="0.5" />
+
+    <!-- Open Collar Structure -->
+    <!-- Left Collar Wing -->
+    <path d="M218,205 L175,250 C185,258 220,268 238,252 L225,212 Z" fill="url(#shirtCollar)" />
+    <path d="M218,205 L175,250 L182,254 L222,212 Z" fill="#caa1b5" opacity="0.5" />
+
+    <!-- Right Collar Wing -->
+    <path d="M282,205 L325,250 C315,258 280,268 262,252 L275,212 Z" fill="url(#shirtCollar)" />
+    <path d="M282,205 L325,250 L318,254 L278,212 Z" fill="#caa1b5" opacity="0.5" />
+
+    <!-- Collar Under Shadows -->
+    <path d="M225,212 L238,252 L246,238 Z" fill="#422030" opacity="0.75" />
+    <path d="M275,212 L262,252 L254,238 Z" fill="#422030" opacity="0.75" />
+  </g>
+
+  <!-- ==================== CROSSED ARMS & HANDS ==================== -->
+  <g id="crossed-arms">
+    <!-- Left Arm Sleeved Section -->
+    <path d="M125,385 C135,395 160,425 210,445 C255,462 305,462 345,435 L335,395 C295,418 245,418 205,398 C170,380 145,365 125,385 Z" fill="url(#shirtArmLeft)" />
+    <path d="M125,385 C140,430 190,480 250,485 L245,500 L140,500 C110,470 115,410 125,385 Z" fill="#583144" />
+
+    <!-- Right Arm Sleeved Section Folded Across -->
+    <path d="M375,385 C365,395 340,425 290,445 C245,462 195,462 155,435 L165,395 C205,418 255,418 295,398 C330,380 355,365 375,385 Z" fill="url(#shirtArmRight)" />
+    <path d="M375,385 C360,430 310,480 250,485 L255,500 L360,500 C390,470 385,410 375,385 Z" fill="#583144" />
+
+    <!-- Right Forearm & Hand resting on Bicep -->
+    <!-- Exposed Forearm Skin -->
+    <path d="M190,405 C205,400 235,398 260,410 C240,428 208,432 188,418 Z" fill="url(#skinHands)" />
+    
+    <!-- Left Forearm Crossing Horizontally -->
+    <path d="M175,415 C215,410 280,410 325,430 C310,455 250,470 195,455 C180,445 175,430 175,415 Z" fill="url(#skinHands)" />
+
+    <!-- Right Hand Fingers resting on Left Arm (from photo) -->
+    <g id="right-hand-fingers" transform="translate(345, 350)">
+      <!-- Index Finger -->
+      <path d="M5,15 C9,18 16,30 13,38 C10,44 4,40 1,32 C-2,25 0,17 5,15 Z" fill="#d99a6c" stroke="#b06f40" stroke-width="0.8" />
+      <!-- Middle Finger -->
+      <path d="M12,18 C18,22 25,34 22,44 C19,50 13,46 9,37 C6,30 8,21 12,18 Z" fill="#dfa072" stroke="#b06f40" stroke-width="0.8" />
+      <!-- Ring Finger -->
+      <path d="M19,25 C25,30 31,42 27,51 C24,57 18,52 15,43 C12,36 15,28 19,25 Z" fill="#cb8654" stroke="#b06f40" stroke-width="0.8" />
+      <!-- Pinky Finger -->
+      <path d="M25,34 C30,39 34,50 30,57 C27,62 22,57 20,49 C18,43 21,37 25,34 Z" fill="#ba7541" stroke="#9a5a29" stroke-width="0.8" />
+    </g>
+
+    <!-- WRIST WATCH ON LEFT WRIST (from photo) -->
+    <g id="wrist-watch" transform="translate(205, 412)">
+      <!-- Watch Strap -->
+      <path d="M-6,8 L24,8 L22,38 L-4,38 Z" fill="url(#watchStrap)" />
+      
+      <!-- Outer Silver Chrome Bezel -->
+      <circle cx="9" cy="22" r="18" fill="url(#watchBezel)" filter="url(#glowSoft)" opacity="0.3" />
+      <circle cx="9" cy="22" r="17" fill="url(#watchBezel)" />
+      <circle cx="9" cy="22" r="14.5" fill="#27272a" />
+
+      <!-- Deep Navy/Black Watch Face -->
+      <circle cx="9" cy="22" r="13.5" fill="url(#watchDial)" />
+
+      <!-- Watch Markers & Chrono Subdials -->
+      <circle cx="9" cy="22" r="1" fill="#ef4444" />
+      <line x1="9" y1="22" x2="16" y2="17" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+      <line x1="9" y1="22" x2="5" y2="28" stroke="#ffffff" stroke-width="1" stroke-linecap="round" />
+      <line x1="9" y1="22" x2="9" y2="12" stroke="#ef4444" stroke-width="0.7" stroke-linecap="round" />
+      
+      <!-- Hour Tick Marks -->
+      <circle cx="9" cy="11" r="0.7" fill="#ffffff" />
+      <circle cx="20" cy="22" r="0.7" fill="#ffffff" />
+      <circle cx="9" cy="33" r="0.7" fill="#ffffff" />
+      <circle cx="-2" cy="22" r="0.7" fill="#ffffff" />
+
+      <!-- Watch Glass Glint -->
+      <path d="M-2,14 C2,10 12,9 18,13 C12,11 3,12 -2,14 Z" fill="#ffffff" opacity="0.65" />
+
+      <!-- Crown Button on Side -->
+      <rect x="25.5" y="20" width="2.5" height="4" rx="1" fill="#d4d4d8" />
+    </g>
+  </g>
+
+  <!-- ==================== HEAD & FACIAL FEATURES LAYER ==================== -->
+  <g id="head-and-face">
+    <!-- Ears -->
+    <!-- Left Ear -->
+    <path d="M165,145 C152,145 150,175 160,195 C166,205 174,202 176,192 Z" fill="#cb8654" />
+    <path d="M164,155 C158,160 157,175 163,185 C165,188 168,185 167,178 Z" fill="#9a5a29" opacity="0.6" />
+
+    <!-- Right Ear -->
+    <path d="M335,145 C348,145 350,175 340,195 C334,205 326,202 324,192 Z" fill="#cb8654" />
+    <path d="M336,155 C342,160 343,175 337,185 C335,188 332,185 333,178 Z" fill="#9a5a29" opacity="0.6" />
+
+    <!-- Head & Jaw Base Structure -->
+    <path d="M170,125 C170,75 210,45 250,45 C290,45 330,75 330,125 C330,165 325,200 305,215 C285,230 215,230 195,215 C175,200 170,165 170,125 Z" fill="url(#skinFace)" />
+
+    <!-- Cheek Warm Highlights -->
+    <ellipse cx="210" cy="148" rx="28" ry="20" fill="url(#skinCheekGlow)" />
+    <ellipse cx="290" cy="148" rx="28" ry="20" fill="url(#skinCheekGlow)" />
+    <ellipse cx="250" cy="115" rx="35" ry="18" fill="#e8ad82" opacity="0.45" />
+
+    <!-- Chin Highlight -->
+    <ellipse cx="250" cy="210" rx="16" ry="10" fill="#e8ad82" opacity="0.4" />
+
+    <!-- Eyebrows -->
+    <!-- Left Eyebrow -->
+    <path d="M192,118 C205,110 225,110 235,115 C230,119 212,118 196,124 Z" fill="#181310" />
+    <path d="M190,119 C205,108 227,109 237,115" stroke="#120e0d" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Right Eyebrow -->
+    <path d="M308,118 C295,110 275,110 265,115 C270,119 288,118 304,124 Z" fill="#181310" />
+    <path d="M310,119 C295,108 273,109 263,115" stroke="#120e0d" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Eyes -->
+    <!-- Left Eye -->
+    <g id="left-eye">
+      <path d="M196,132 C206,125 224,125 232,133 C223,139 205,139 196,132 Z" fill="#f8fafc" />
+      <!-- Iris -->
+      <circle cx="215" cy="132" r="5.5" fill="#2d1c14" />
+      <circle cx="215" cy="132" r="3.2" fill="#090605" />
+      <!-- Specular Catchlights -->
+      <circle cx="213.5" cy="130.5" r="1.6" fill="#ffffff" />
+      <circle cx="216.5" cy="133.5" r="0.8" fill="#ffffff" opacity="0.8" />
+      <!-- Eyelash Line -->
+      <path d="M194,132 C205,124 225,124 234,133" stroke="#181310" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Right Eye -->
+    <g id="right-eye">
+      <path d="M304,132 C294,125 276,125 268,133 C277,139 295,139 304,132 Z" fill="#f8fafc" />
+      <!-- Iris -->
+      <circle cx="285" cy="132" r="5.5" fill="#2d1c14" />
+      <circle cx="285" cy="132" r="3.2" fill="#090605" />
+      <!-- Specular Catchlights -->
+      <circle cx="283.5" cy="130.5" r="1.6" fill="#ffffff" />
+      <circle cx="286.5" cy="133.5" r="0.8" fill="#ffffff" opacity="0.8" />
+      <!-- Eyelash Line -->
+      <path d="M306,132 C295,124 275,124 266,133" stroke="#181310" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    </g>
+
+    <!-- Nose Structure -->
+    <g id="nose">
+      <!-- Nose Bridge & Shadow -->
+      <path d="M246,118 L244,152 C236,155 234,162 240,165 C246,168 254,168 260,165 C266,162 264,155 256,152 L254,118" fill="none" stroke="#ba7541" stroke-width="1.2" opacity="0.6" />
+      <ellipse cx="250" cy="158" rx="6.5" ry="4.5" fill="#e8ad82" opacity="0.6" />
+      
+      <!-- Nostrils -->
+      <path d="M241,163 C243,161 247,162 247,164 C247,166 242,166 241,163 Z" fill="#582a12" />
+      <path d="M259,163 C257,161 253,162 253,164 C253,166 258,166 259,163 Z" fill="#582a12" />
+    </g>
+
+    <!-- BROAD CONFIDENT SMILE WITH WHITE TEETH (Exact match to photo) -->
+    <g id="mouth-smile">
+      <!-- Lip Contour Shading -->
+      <path d="M214,182 C230,175 270,175 286,182 C275,208 225,208 214,182 Z" fill="#8c3a3a" />
+
+      <!-- Inside Mouth Dark Depth -->
+      <path d="M217,183 C230,179 270,179 283,183 C275,202 225,202 217,183 Z" fill="#450a0a" />
+
+      <!-- Brilliant White Upper Teeth Arch -->
+      <path d="M220,183 C232,180 268,180 280,183 C276,194 224,194 220,183 Z" fill="#ffffff" />
+      
+      <!-- Subtle Tooth Separator Lines -->
+      <line x1="250" y1="181" x2="250" y2="192" stroke="#e2e8f0" stroke-width="0.8" />
+      <line x1="243" y1="182" x2="243" y2="191" stroke="#cbd5e1" stroke-width="0.6" />
+      <line x1="257" y1="182" x2="257" y2="191" stroke="#cbd5e1" stroke-width="0.6" />
+      <line x1="236" y1="183" x2="236" y2="189" stroke="#cbd5e1" stroke-width="0.6" />
+      <line x1="264" y1="183" x2="264" y2="189" stroke="#cbd5e1" stroke-width="0.6" />
+
+      <!-- Lower Lip Pinkish Highlight -->
+      <path d="M225,198 C240,206 260,206 275,198 C265,206 235,206 225,198 Z" fill="#be5a5a" />
+      <!-- Smile Crease Highlights / Dimples -->
+      <path d="M208,178 C211,185 215,194 220,198" stroke="#9a5a29" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6" />
+      <path d="M292,178 C289,185 285,194 280,198" stroke="#9a5a29" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6" />
+    </g>
+
+    <!-- NEAT GROOMED BEARD AND MUSTACHE (from photo) -->
+    <g id="facial-hair">
+      <!-- Mustache over Upper Lip -->
+      <path d="M228,175 C238,170 248,175 250,177 C252,175 262,170 272,175 C264,178 254,179 250,180 C246,179 236,178 228,175 Z" fill="#181310" opacity="0.92" />
+      <path d="M232,174 C242,172 248,175 250,177 C252,175 258,172 268,174" stroke="#0a0807" stroke-width="1.5" stroke-linecap="round" />
+
+      <!-- Soul Patch below Lower Lip -->
+      <path d="M245,203 C248,201 252,201 255,203 C254,209 246,209 245,203 Z" fill="#181310" opacity="0.88" />
+
+      <!-- Jawline and Chin Beard Trim -->
+      <path d="M172,158 C170,185 178,210 205,225 C222,234 278,234 295,225 C322,210 330,185 328,158 C324,180 315,208 290,222 C270,230 230,230 210,222 C185,208 176,180 172,158 Z" fill="#181310" opacity="0.94" />
+      
+      <!-- Chin Beard Center Density -->
+      <path d="M228,218 C240,224 260,224 272,218 C265,232 235,232 228,218 Z" fill="#0d0a09" />
+    </g>
+
+    <!-- STYLED TEXTURED DARK HAIR (Exact match to tousled fringe in photo) -->
+    <g id="hair-mass">
+      <!-- Hair Base Mass -->
+      <path d="M165,135 C158,105 168,60 205,42 C230,30 280,30 310,48 C338,64 345,100 335,135 C328,110 315,90 300,82 C285,74 215,74 195,85 C180,95 172,115 165,135 Z" fill="url(#hairBase)" />
+
+      <!-- Tousled Fringe Sweeping Naturally Across Forehead -->
+      <path d="M170,105 C180,85 205,75 230,80 C210,92 195,110 185,118 C180,108 175,106 170,105 Z" fill="url(#hairHighlight)" />
+      <path d="M205,78 C230,70 260,72 280,85 C255,95 235,108 215,120 C220,100 215,88 205,78 Z" fill="#241b17" />
+      <path d="M245,74 C275,68 305,75 322,95 C305,100 285,108 265,118 C275,98 265,85 245,74 Z" fill="url(#hairHighlight)" />
+      <path d="M285,78 C310,75 330,88 335,110 C325,102 310,98 295,102 Z" fill="#181310" />
+
+      <!-- Textured Wisp Strands & Hair Highlights -->
+      <path d="M185,60 C215,45 255,44 285,52" stroke="#54413b" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.65" />
+      <path d="M210,50 C240,40 270,42 295,54" stroke="#6b534b" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.6" />
+      <path d="M195,82 C225,72 260,74 285,88" stroke="#54413b" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5" />
+      <path d="M230,86 C250,80 275,82 292,94" stroke="#6b534b" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.5" />
+    </g>
+  </g>
+</svg>

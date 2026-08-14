@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollToTop();
   initSkillBars();
-  initSkillFilter();
+  initResumeDownload();
+  initProfilePhotoManager();
 });
 
 /* ==========================================================
@@ -228,7 +229,8 @@ function initMobileMenu() {
   const navLinks = document.getElementById('nav-links');
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener('click', () => {
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     navLinks.classList.toggle('active');
   });
 
@@ -238,6 +240,13 @@ function initMobileMenu() {
     l.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
+  });
+
+  // Dismiss on clicking outside
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+      navLinks.classList.remove('active');
+    }
   });
 }
 
@@ -269,8 +278,7 @@ function initTypingEffect() {
   const roles = [
     'Full-Stack Developer',
     'Software Engineer',
-    'Data Structures Specialist',
-    'AI & Machine Learning Student'
+    'Data Structures Specialist'
   ];
   let wordIndex = 0;
   let charIndex = 0;
@@ -421,49 +429,15 @@ function initSkillBars() {
   bars.forEach(b => barObserver.observe(b));
 }
 
-function initSkillFilter() {
-  const tabs = document.querySelectorAll('.skill-filter-btn');
-  const cards = document.querySelectorAll('.skills-bento-card');
-  if (tabs.length === 0 || cards.length === 0) return;
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filter = tab.getAttribute('data-filter');
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter || category.includes(filter)) {
-          card.style.display = 'flex';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0) scale(1)';
-          }, 30);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(8px) scale(0.97)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 250);
-        }
-      });
-    });
-  });
-}
-
 /* ==========================================================
    10. Compact Functional Contact Forms Validation
    ========================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const toast = document.getElementById('form-toast');
-  const submitBtn = document.getElementById('form-submit-btn');
-  const btnText = document.getElementById('btn-text');
   if (!form || !toast) return;
 
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Acquire DOM input values
@@ -478,7 +452,7 @@ function initContactForm() {
 
     // Guard parameters
     if (!name || !email || !subject || !msg) {
-      showToast('Please fill out all required form fields.', 'error');
+      showToast('Please verify that all inputs have been filled out.', 'error');
       return;
     }
 
@@ -487,61 +461,73 @@ function initContactForm() {
       return;
     }
 
-    // Set UI submitting state
-    if (submitBtn && btnText) {
+    // Get submit button & display transmitting loading state
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+    if (submitBtn) {
       submitBtn.disabled = true;
-      btnText.textContent = 'Transmitting Message...';
+      submitBtn.innerHTML = 'Transmitting...';
+      submitBtn.style.opacity = '0.7';
+      submitBtn.style.cursor = 'not-allowed';
     }
 
-    try {
-      // Direct FormSubmit email transmission API to thotaleelasaikrishna@gmail.com
-      const response = await fetch('https://formsubmit.co/ajax/thotaleelasaikrishna@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: name,
-          email: email,
-          _subject: `Portfolio Inquiry: ${subject}`,
-          message: msg
-        })
-      });
+    // FormSubmit AJAX submission parameters
+    const submissionData = {
+      "Contact Name": name,
+      "Email": email,
+      "Subject Line": subject,
+      "Inquiry Message": msg,
+      "_subject": `⚡ Portfolio Inquiry: ${subject}`,
+      "_replyto": email,
+      "_captcha": "false"
+    };
 
-      const result = await response.json();
-
-      if (response.ok || result.success === 'true' || result.success === true) {
-        showToast('Success! Your message has been sent to thotaleelasaikrishna@gmail.com. I will get back to you shortly.', 'success');
+    // AJAX POST request to FormSubmit endpoint
+    fetch('https://formsubmit.co/ajax/thotaleelasaikrishna@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(submissionData)
+    })
+    .then(async (response) => {
+      if (response.ok) {
+        showToast('Success! Your message was submitted.', 'success');
         form.reset();
       } else {
-        showToast('Message sent! If you do not receive a response soon, feel free to email thotaleelasaikrishna@gmail.com directly.', 'success');
-        form.reset();
+        const errDetail = await response.json().catch(() => ({}));
+        const errText = errDetail.message || 'Form transmission failed. Please try again.';
+        showToast(errText, 'error');
       }
-    } catch (err) {
-      console.error('Email submission error:', err);
-      showToast('Network error while sending. Please email thotaleelasaikrishna@gmail.com directly.', 'error');
-    } finally {
-      if (submitBtn && btnText) {
+    })
+    .catch((err) => {
+      console.error('Submission AJAX error:', err);
+      showToast('Network error, please check connection and try again.', 'error');
+    })
+    .finally(() => {
+      if (submitBtn) {
         submitBtn.disabled = false;
-        btnText.textContent = 'Transmit Message';
+        submitBtn.innerHTML = originalBtnHTML;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
       }
-    }
+    });
   });
 
   function showToast(message, type) {
     toast.textContent = message;
     toast.style.display = 'block';
     if (type === 'success') {
-      toast.className = 'toast-box toast-success';
+      toast.classList.add('toast-success');
     } else {
-      toast.className = 'toast-box toast-error';
+      toast.classList.add('toast-error');
     }
     
     // Auto erase toast panels
     setTimeout(() => {
       toast.style.display = 'none';
-    }, 7000);
+    }, 8000);
   }
 
   function isValidEmail(email) {
@@ -571,4 +557,183 @@ function initScrollToTop() {
       behavior: 'smooth'
     });
   });
+}
+
+/* ==========================================================
+   12. Professional PDF Resume Download Flow
+   ========================================================== */
+function initResumeDownload() {
+  const downloadBtn = document.getElementById('download-resume-btn');
+  if (!downloadBtn) return;
+
+  downloadBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const originalHTML = downloadBtn.innerHTML;
+    downloadBtn.style.opacity = '0.75';
+    downloadBtn.style.pointerEvents = 'none';
+    downloadBtn.innerHTML = 'Generating PDF...';
+
+    const element = document.getElementById('resume-pdf-template');
+    if (!element) {
+      alert('Error: Resume template container not found.');
+      downloadBtn.style.opacity = '1';
+      downloadBtn.style.pointerEvents = 'auto';
+      downloadBtn.innerHTML = originalHTML;
+      return;
+    }
+
+    // Create a temporary visible offscreen clone so html2canvas computes layout dimensions properly
+    const clone = element.cloneNode(true);
+    clone.style.display = 'block';
+    clone.style.position = 'fixed';
+    clone.style.left = '-9999px';
+    clone.style.top = '0';
+    clone.style.width = '794px';
+    clone.style.background = '#ffffff';
+    clone.style.color = '#000000';
+    clone.style.zIndex = '-9999';
+    clone.style.opacity = '1';
+    clone.style.visibility = 'visible';
+    document.body.appendChild(clone);
+
+    const opt = {
+      margin: [0.35, 0.4, 0.35, 0.4], // Margins in inches: top, left, bottom, right
+      filename: 'Thota_Leela_Sai_Krishna_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        letterRendering: true,
+        logging: false,
+        windowWidth: 794
+      },
+      jsPDF: {
+        unit: 'in',
+        format: 'a4',
+        orientation: 'portrait'
+      }
+    };
+
+    try {
+      if (typeof html2pdf !== 'undefined') {
+        await html2pdf().set(opt).from(clone).save();
+      } else {
+        throw new Error('html2pdf library not found');
+      }
+    } catch (err) {
+      console.warn('html2pdf capture encountered an issue, falling back to static PDF download:', err);
+      const currentPath = window.location.pathname;
+      const basePath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      const pdfUrl = `${window.location.origin}${basePath}Thota_Leela_Sai_Krishna_Resume.pdf`;
+
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Thota_Leela_Sai_Krishna_Resume.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      if (clone.parentNode) {
+        document.body.removeChild(clone);
+      }
+      downloadBtn.style.opacity = '1';
+      downloadBtn.style.pointerEvents = 'auto';
+      downloadBtn.innerHTML = originalHTML;
+    }
+  });
+}
+
+/* ==========================================================
+   13. Profile Photo Asset Resolution & Direct Drop/Select
+   ========================================================== */
+function initProfilePhotoManager() {
+  const profileImg = document.getElementById('hero-profile-img');
+  const container = document.getElementById('profile-picture-container');
+  const fileInput = document.getElementById('hero-photo-file-input');
+
+  if (!profileImg) return;
+
+  // 1. Check local storage for persistent user custom photo first
+  const savedPhoto = localStorage.getItem('user_profile_photo');
+  if (savedPhoto) {
+    profileImg.src = savedPhoto;
+  } else {
+    // 2. Check candidate static image files in priority order
+    const candidateUrls = [
+      '/WhatsApp Image 2026-08-14 at 10.29.00 PM.jpeg',
+      '/profile.jpg',
+      '/profile.jpeg',
+      '/profile.png',
+      '/photo.jpg',
+      '/photo.jpeg',
+      '/photo.png'
+    ];
+
+    function tryLoadCandidates(index) {
+      if (index >= candidateUrls.length) return;
+      const testImg = new Image();
+      testImg.onload = () => {
+        profileImg.src = candidateUrls[index];
+      };
+      testImg.onerror = () => {
+        tryLoadCandidates(index + 1);
+      };
+      testImg.src = candidateUrls[index];
+    }
+
+    tryLoadCandidates(0);
+  }
+
+  // 3. Allow direct click on photo to pick your exact photo file
+  if (container && fileInput) {
+    container.addEventListener('click', (e) => {
+      // Trigger file selector
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (file) {
+        handleImageFile(file);
+      }
+    });
+
+    // 4. Allow drag & drop directly onto the picture
+    container.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      container.style.transform = 'scale(1.04)';
+    });
+
+    container.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      container.style.transform = '';
+    });
+
+    container.addEventListener('drop', (e) => {
+      e.preventDefault();
+      container.style.transform = '';
+      const file = e.dataTransfer?.files?.[0];
+      if (file && file.type.startsWith('image/')) {
+        handleImageFile(file);
+      }
+    });
+  }
+
+  function handleImageFile(file) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const dataUrl = event.target?.result;
+      if (dataUrl && typeof dataUrl === 'string') {
+        profileImg.src = dataUrl;
+        try {
+          localStorage.setItem('user_profile_photo', dataUrl);
+        } catch (err) {
+          console.warn('Unable to store image in localStorage', err);
+        }
+      }
+    };
+    reader.readAsDataURL(file);
+  }
 }
